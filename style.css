@@ -745,3 +745,66 @@ body {
     margin-bottom: 20px; /* Espaçamento uniforme */
   }
 }
+
+/* Corrige alinhamento em telas médias (768px a 991px) - força 2 colunas */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Cada quadrado ocupa 50% da largura = 2 colunas */
+  #projetos [class*="col-md-"] {
+    width: 50%;
+    float: left;
+    padding: 0 15px; /* Mantém o espaçamento do Bootstrap */
+  }
+
+  /* Centraliza a grade */
+  #projetos .row {
+    margin: 0 auto;
+    max-width: 800px; /* Limita a largura para ficar bonito */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Ajuste de altura da imagem para essa faixa */
+  .project-img {
+    height: 140px;
+    object-fit: contain;
+  }
+
+  /* Espaçamento entre linhas */
+  .thumbnail {
+    margin-bottom: 30px;
+  }
+}
+
+/* Corrige layout em resoluções 992px a 1200px - força 3 colunas */
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* Cada quadrado ocupa 33.33% = 3 colunas */
+  #projetos [class*="col-md-"] {
+    width: 33.3333%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Centraliza a grade e limita largura */
+  #projetos .row {
+    max-width: 1140px; /* Largura máxima para 3 colunas confortáveis */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Altura ajustada para essa faixa */
+  .project-img {
+    height: 145px;
+  }
+
+  .cust-caption {
+    height: 135px;
+  }
+
+  .thumbnail {
+    margin-bottom: 25px;
+  }
+}
